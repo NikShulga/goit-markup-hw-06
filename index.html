@@ -538,6 +538,20 @@
             </li>
           </ul>
         </div>
+        <div class="">
+          <h2 class="send-title">Підпишіться на розсилку</h2>
+          <div class="send">
+            <label class="footer-lable">
+              <input class="send-input" type="email" name="send-email" placeholder="E-mail" />
+            </label>
+            <button class="send-btn" type="submit">
+              Підписатися
+              <svg width="24" height="24">
+                <use href="./images/icons.svg#icon-send"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </footer>
     <!-- Modal window -->
@@ -548,6 +562,54 @@
             <use href="./images/icons.svg#close"></use>
           </svg>
         </button>
+        <form class="reqister-form">
+          <strong class="reqister-form-title">Залиште свої дані, ми вам передзвонимо</strong>
+          <div class="reqister-form-group" role="group">
+            <label class="reqister-form-wrap">
+              <span class="reqister-form-label">Ім'я</span>
+              <input class="reqister-form-input" name="name" type="text" />
+              <svg class="reqister-form-icon" width="18" height="18">
+                <use href="./images/icons.svg#name"></use>
+              </svg>
+            </label>
+            <label class="reqister-form-wrap">
+              <span class="reqister-form-label">Телефон</span>
+              <input class="reqister-form-input" name="phone" type="tel" />
+              <svg class="reqister-form-icon" width="18" height="18">
+                <use href="./images/icons.svg#phone"></use>
+              </svg>
+            </label>
+            <label class="reqister-form-wrap">
+              <span class="reqister-form-label">Пошта</span>
+              <input class="reqister-form-input" name="email" type="email" />
+              <svg class="reqister-form-icon" width="18" height="18">
+                <use href="./images/icons.svg#email"></use>
+              </svg>
+            </label>
+            <label class="reqister-form-wrap">
+              <span class="reqister-form-label">Коментар</span>
+              <textarea
+                class="reqister-form-message"
+                name="comment"
+                rows="5"
+                placeholder="Введіть текст"
+              >
+              </textarea>
+            </label>
+          </div>
+          <label class="reqister-form-agreement">
+            <input class="reqister-checkbox visually-hidden" type="checkbox" name="checkbox" />
+            <svg class="reqister-check" width="16" height="15">
+              <use class="reqister-form-uncheck" href="./images/icons.svg#checkbox-border"></use>
+              <use class="reqister-form-check" href="./images/icons.svg#icon-check"></use>
+            </svg>
+            <span class="checkbox-text"
+              >Погоджуюся з розсилкою та приймаю
+              <a class="checkbox-link" href="">Умови договору</a>
+            </span>
+          </label>
+          <button class="reqister-form-btn" type="submit">Відправити</button>
+        </form>
       </div>
     </div>
     <script src="./js/modal.js"></script>
