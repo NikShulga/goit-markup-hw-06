@@ -156,20 +156,25 @@ img {
   margin-bottom: 20px;
 }
 .reqister-form-wrap {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.position-icon {
   position: relative;
-  display: block;
-  margin-bottom: 28px;
 }
 .reqister-form-wrap:last-child {
   margin-bottom: 0;
 }
 .reqister-form-label {
-  display: block;
   text-align: left;
   margin-bottom: 4px;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
+}
+..reqister-form-input {
+  height: 40px;
 }
 .reqister-form-input,
 .reqister-form-message {
@@ -182,14 +187,17 @@ img {
   transition: border var(--transition);
 }
 .reqister-form-input:focus,
-.reqister-form-message:focus {
+.reqister-form-message:focus,
+.reqister-form-input:hover,
+.reqister-form-message:hover {
   border: 1px solid var(--text-link-act);
   /* fill: var(--text-link-act); */
 }
-.reqister-form-input .reqister-form-icon {
+.reqister-form-icon {
   transition: fill var(--transition);
 }
-.reqister-form-input:focus + .reqister-form-icon {
+.reqister-form-input:focus + .reqister-form-icon,
+.reqister-form-input:hover + .reqister-form-icon {
   fill: var(--text-link-act);
 }
 .reqister-form-message {
@@ -204,7 +212,8 @@ img {
 .reqister-form-icon {
   position: absolute;
   left: 12px;
-  bottom: 11px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .reqister-form-agreement {
   display: flex;
@@ -212,10 +221,18 @@ img {
   justify-content: center;
   gap: 8px;
   margin-bottom: 30px;
+  cursor: pointer;
 }
-.reqister-checkbox:checked + .reqister-check .reqister-form-uncheck {
+/* .reqister-checkbox:checked + .reqister-check .reqister-form-uncheck {
   opacity: 0;
   transition: opacity var(--transition);
+} */
+.reqister-checkbox:hover + .reqister-check .reqister-form-uncheck,
+.reqister-checkbox:focus + .reqister-check .reqister-form-uncheck {
+  fill: var(--text-link-act);
+}
+.reqister-form-uncheck {
+  transition: fill var(--transition);
 }
 .reqister-form-check {
   opacity: 0;
@@ -231,7 +248,7 @@ img {
   color: var(--text-link-act);
   text-underline-position: under;
 }
-.reqister-form-btn {
+/* .reqister-form-btn {
   display: inline-flex;
   align-items: center;
   font-weight: 700;
@@ -247,10 +264,15 @@ img {
   border: 0;
   cursor: pointer;
   transition: background-color var(--transition);
-}
+} */
 .reqister-form-btn:hover,
 .reqister-form-btn:focus {
   background-color: var(--bgcolor-btn);
+}
+.reqister-form-message::placeholder {
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
 }
 
 /* End */
@@ -269,7 +291,7 @@ img {
 .footer {
   padding-top: 60px;
   padding-bottom: 60px;
-  background-color: #2f303a;
+  background-color: var(--bgcolor-hero);
 }
 
 .footer-box {
@@ -429,6 +451,8 @@ img {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   transition: background-color var(--transition);
+  display: flex;
+  justify-content: center;
 }
 
 .card-set {
@@ -583,52 +607,25 @@ img {
 }
 .send {
   display: flex;
-}
-.send-title {
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.14;
-  text-transform: uppercase;
-  color: var(--text-title);
-  margin-bottom: 20px;
+  gap: 12px;
 }
 .send-input {
-  /* text-align: left; */
   width: 358px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 16px;
-  margin-right: 12px;
+  padding: 15px 16px;
   font-size: 16px;
   line-height: 1.25;
   display: flex;
   align-items: center;
   color: rgba(255, 255, 255, 0.6);
-  background-color: var(--bgcolor-hero);
+  background-color: inherit;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   outline: 0;
 }
 .send-btn {
-  display: inline-flex;
   padding: 10px 28px;
-  /* width: 200px;
-  height: 50px; */
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.88;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  letter-spacing: 0.06em;
-  color: var(--text-title);
-  background-color: var(--text-link-act);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  border: 0;
   gap: 10px;
-  fill: var(--text-title);
+  fill: currentColor;
 }
 .filter-btn {
   font-weight: 500;
@@ -650,7 +647,9 @@ img {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-
+.footer-content:last-child {
+  margin-left: auto;
+}
 .portfolio-list {
   --card-item: 3;
 }
