@@ -132,7 +132,8 @@ img {
   cursor: pointer;
   transition: fill var(--transition);
 }
-.modal-btn:hover {
+.modal-btn:hover,
+.modal-btn:focus {
   fill: var(--text-link-act);
 }
 .backdrop.is-hidden {
